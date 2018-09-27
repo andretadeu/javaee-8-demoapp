@@ -1,0 +1,12 @@
+/* Create the database */
+create database demoapp character set 'utf8';
+
+/* Create demoappuser */
+create user 'demoappuser' identified by 'password';
+
+/* Setup password */
+set password for 'demoappuser' = PASSWORD('D3moUserP4ss#');
+
+/* Give all privileges to demoappuser */
+/* Do not do this in production projects! */
+grant all privileges on 'demoapp'.* to 'demoappuser'@'localhost' identified by 'D3moUserP4ss#';
